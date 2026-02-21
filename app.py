@@ -13,7 +13,7 @@ app.secret_key = os.environ.get("SECRET_KEY", "change_this_secret")
 # Gemini API Configuration
 # ==================================
 
-GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
+genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
 genai.configure(api_key=GEMINI_API_KEY)
 
@@ -182,3 +182,4 @@ def logout():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8000)
+
